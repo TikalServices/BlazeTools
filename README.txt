@@ -1,7 +1,7 @@
-Blaze the Cat R discord bot.
-For discord.py
+Blaze the Cat R Siscord + Revolt bot.
+For discord.py + Voltage for Revolt.
 
-This is the source code for a small utility bot for TIKAL'S PALACE.
+This is the source code for a small utility bot for TIKAL'S PALACE. This source code is perfect if you wish to make your own private bot that displays your social media pages or see what my utility bot is like.
 Has userinfo command and say command.
 
 SETUP
@@ -10,3 +10,6 @@ SETUP
 3. At client.run("YOURBOTTOKEN") which is located at the bottom, replace YOURBOTTOKEN with your own Discord bot token.
 4. At client = commands.Bot(command_prefix = 'br!'), replace br! with the prefix you want to use.
 5. Run the Bot.
+
+Same process happens with the mainrevolt.py file except you install voltage by running the following command:
+pip install git+https://github.com/EnokiUN/voltage
