@@ -12,18 +12,31 @@ client.remove_command("help")
 @client.event
 async def on_ready():
     await client.change_presence(status=discord.Status.online)
+    print("Bot is Online and Ready")
 
 @client.command()
 async def help(ctx):
     embed = discord.Embed(title="HELP MENU", description="Here is my List of Commands", color=(14287103))
-    embed.add_field(name="CORE COMMANDS", value="br!help - This message\nbr!ping - Checks the latency of the bot\nbr!say - Make me say anything\nbr!esay - Make me say anything in an embed\nbr!userinfo - Get information about a user", inline=False)
-    embed.add_field(name="MISC COMMANDS", value="br!tikalsocials - Get Tikals Services social media pages", inline=False)
-    embed.add_field(name="DEVELOPER COMMANDS", value="br!restart - Restarts the Bot", inline=False)
+    embed.add_field(name="CORE COMMANDS", value="b!help - This message\nb!ping - Checks the latency of the bot\nb!tikalsocials - Get Tikals Services social media pages\nb!sonicsocials - Get Sonic the Hedgehogs social media links", inline=False)
+    embed.add_field(name="MISC COMMANDS", value="b!say - Make me say anything\nb!esay - Make me say anything in an embed\nb!userinfo - Get information about a user", inline=False)
+    embed.add_field(name="DEVELOPER COMMANDS", value="b!restart - Restarts the Bot", inline=False)
     await ctx.send(embed=embed)
 
 @client.command()
 async def ping(ctx):
     await ctx.send("Pong")
+
+@client.command()
+async def sonicsocials(ctx):
+    embed = discord.Embed(title="SONIC THE HEDGEHOG SOCIAL MEDIA PAGES", description="Youtube: https://www.youtube.com/channel/UCp6JU855jCI6yOU-hfmZ5ew\nTwitter: https://twitter.com/SonicX_Hedgehog\nInstagram: https://www.instagram.com/SonicTheHedgehogDev/\nGithub: https://github.com/SonicTheDev", color=(40191))
+    embed.add_field(name="DISCORD", value="Discord Account: SonicTheHedgehog#4570 (User ID: 691801844577730590)\nDiscord Server: https://discord.gg/j9Tt7h2UkG", inline=False)
+    await ctx.send(embed=embed)
+
+@client.command()
+async def tikalsocials(ctx):
+    embed = discord.Embed(title="TIKALS SOCIAL MEDIA PAGES", description="Youtube: https://www.youtube.com/channel/UC6vNUcFhQNNC6rLLN-383QA\nTwitter: https://twitter.com/TikalServices\nInstagram: https://www.instagram.com/tikalservices/\nGithub: https://github.com/TikalServices", color=(14287103))
+    embed.add_field(name="DISCORD", value="Discord Account: tikalservices (User ID: 1041993747950485595)\nDiscord Server: https://discord.gg/5jKN6kfAyf", inline=False)
+    await ctx.send(embed=embed)
 
 @client.command()
 async def say(ctx, *, question: commands.clean_content):
@@ -61,12 +74,6 @@ async def userinfo(ctx, *, user: discord.Member = None):
         embed.add_field(name="Roles [{}]".format(len(user.roles)-1), value=role_string, inline=False)
     embed.set_footer(text="Blaze the Cat R")
     embed.set_thumbnail(url=user.avatar)
-    await ctx.send(embed=embed)
-
-@client.command()
-async def tikalsocials(ctx):
-    embed = discord.Embed(title="TIKALS SOCIAL MEDIA PAGES", description="Youtube: https://www.youtube.com/channel/UC6vNUcFhQNNC6rLLN-383QA\nTwitter: https://twitter.com/TikalServices\nInstagram: https://www.instagram.com/tikalservices/\nGithub: https://github.com/TikalServices", color=(14287103))
-    embed.add_field(name="DISCORD", value="Discord Account: TIKAL#0674 (User ID: 1041993747950485595)\nDiscord Server: https://discord.gg/5jKN6kfAyf", inline=False)
     await ctx.send(embed=embed)
 
 
